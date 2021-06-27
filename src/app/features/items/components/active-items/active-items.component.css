@@ -1,0 +1,17 @@
+:host {
+    padding: 10px;
+}
+.bigMessage {
+    padding-top: 100px;
+    text-align: center;
+    margin: auto;
+}
+span {
+    font-size: 80px;
+    color: var(--appBgMediumColor);
+}
+h3 {
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--appBgDarkColor);
+}  

@@ -1,0 +1,16 @@
+<div class='appInfo'>
+    <h1>{{header}}</h1>
+    <h2>by {{developerName}}</h2>
+    <p>{{today | date:"dd/MM/yyyy"}}</p>
+    <div class="center">
+        <button (click)="goToCreateList()">Create new list</button>
+    </div>   
+</div>
+<ng-container *ngIf="(counters$ | async) as counters">
+    <div class="dataInfo">
+        <div  *ngFor="let counter of counters , let i=index">
+            <app-counter [subject]=subjects[i] [icon]=icons[i] [counter]=counter></app-counter>
+        </div>
+    </div>
+</ng-container>
+<app-general-error *ngIf="!(counters$ | async) && doneLoading"></app-general-error>

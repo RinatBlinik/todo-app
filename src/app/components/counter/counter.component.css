@@ -1,0 +1,10 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    columns: var(--appFgDarkColor);
+    text-align: center;
+    width: 130px;
+}
+.big{
+    font-size: 30px;
+}

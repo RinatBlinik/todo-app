@@ -1,0 +1,11 @@
+
+:host{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    background-color: var(--appBgMediumColor);
+    color: var(--appFgLightColor);
+    text-align: center;
+    padding: 10px;
+}

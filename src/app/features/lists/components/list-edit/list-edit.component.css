@@ -1,0 +1,28 @@
+:host {
+    padding: 10px;
+}
+option, select{
+    padding: 4px;
+    font-size: 24px;
+}
+.form{
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--appBgVeryLightColor);
+}
+div {
+    padding: 10px;
+}
+label {
+    padding-top: 5px;
+}
+input, textarea {
+    outline: 0px transparent;
+}
+input.ng-invalid, textarea.ng-invalid{
+    border: 1px solid rgb(136, 182, 50);
+}
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

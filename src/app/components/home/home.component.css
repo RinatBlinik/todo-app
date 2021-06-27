@@ -1,0 +1,29 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+h1, h2, p {
+    text-align: center;
+    font-weight: 400;
+    padding: 8px;
+}
+.appInfo{
+    background-color: var(--appBgDarkColor);
+    color: var(--appFgLightColor);
+    margin-top: 7px;
+    font-weight: 500;
+    padding: 20px;
+}
+.dataInfo {
+    display: flex;
+    flex-direction: row;
+    color: var(--appBgDarkColor);
+    margin: auto;
+    padding: 30px;
+}
+button {
+width: 100px;
+}
+.center{
+    margin: auto;
+}

@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    color: var(--appBgMediumColor)
+}
+p {
+    padding-left: 7px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+.isCompleted-false{
+    color: rgb(46, 40, 40);
+}
+
+.isCompleted-true{
+    text-decoration: line-through;
+    color: rgba(46, 40, 40,0.8);
+}

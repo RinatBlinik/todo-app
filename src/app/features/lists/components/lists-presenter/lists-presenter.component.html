@@ -1,0 +1,11 @@
+<app-navigation-presenter [navParts]="navParts" > </app-navigation-presenter>
+<div *ngIf="lists$ | async">
+    <div *ngFor="let l of lists$ | async">
+        <app-list-box [caption]="l.caption" [icon]="l.icon" [color]="l.color" [bgColorClass]="'appBgLight'" (click)="goToListViewer(l.id)"></app-list-box>
+    </div>
+    <div>
+        <app-list-box [caption]="newList.caption" [icon]="newList.icon" [color]="newList.color" [bgColorClass]="'appBgDark'" (click)="goToCreateList()" ></app-list-box>
+    </div>
+</div>
+
+<app-general-error *ngIf="!(lists$ | async) && doneLoading"></app-general-error>

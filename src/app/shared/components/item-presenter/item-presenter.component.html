@@ -1,0 +1,7 @@
+<div *ngIf="!isCompleted" class="material-icons">
+    crop_square
+</div>
+<div *ngIf="isCompleted" class="material-icons">
+    check
+</div>
+<p class="isCompleted-{{isCompleted}}">{{caption}}</p>

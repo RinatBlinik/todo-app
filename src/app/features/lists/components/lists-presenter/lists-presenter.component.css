@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+div {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+.newList {
+    background-color: var(--appBgDarkColor);
+}

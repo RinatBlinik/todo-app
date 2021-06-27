@@ -1,0 +1,5 @@
+{
+    "appName": "Todos App",
+    "developerName": "Rinat Blinik",
+    "baseUrl": "http://localhost:5000/api"
+}

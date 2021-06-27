@@ -1,0 +1,43 @@
+<app-navigation-presenter [navParts]="navParts" > </app-navigation-presenter>
+<ng-container *ngIf="(initialList$ |async) || id===-1">
+
+    <div class="form" [formGroup]="form">
+        <div class="form-field" *ngIf="get('caption') as field">
+            <label>Caption</label>
+            <input type="text" formControlName="caption" value="{{(initialList$ |async)?.caption}}">
+            <app-errors-presenter [errors]="field.errors"></app-errors-presenter>
+        </div>
+    
+        <div class="form-field" *ngIf="get('description') as field">
+            <label>Descrption</label>
+            <textarea rows="4" formControlName="description"  value="{{(initialList$ |async)?.description}}"></textarea>
+            <app-errors-presenter [errors]="field.errors"></app-errors-presenter>
+        </div>
+    
+        <div class="form-field icon" *ngIf="get('icon') as field">
+            <label>Icon</label>
+            <select class="material-icons" [class]="initialcolor" formControlName="icon">
+                <option disabled [selected]="true" value></option>
+                <option class="material-icons" *ngFor="let icon of icons$ | async" [selected]="(initialList$ |async)?.icon===icon">
+                      {{icon}}
+                </option>
+            </select>
+            <app-errors-presenter [errors]="field.errors"></app-errors-presenter>
+        </div>
+        <div class="form-field color" *ngIf="get('color') as field">
+            <label>Color</label>
+            <select  formControlName="color" [class]="initialcolor" #selectColor (change)="colorChanged(selectColor.value)">
+                <option disabled [selected]="true" value></option>
+                <option  *ngFor="let color of colors$ | async"  [class]=color [selected]="(initialList$ |async)?.color===color">
+                      {{color}}
+                </option>
+            </select>
+            <app-errors-presenter [errors]="field.errors"></app-errors-presenter>
+        </div>
+        <div>
+            <button [disabled]="form.invalid" (click)="savelist()" >Save</button>
+        </div>
+    </div>
+</ng-container>
+
+<app-general-error *ngIf="!((initialList$ |async) || (id===-1)) && doneLoading"></app-general-error>

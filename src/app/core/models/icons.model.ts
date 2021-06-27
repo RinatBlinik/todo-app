@@ -1,0 +1,15 @@
+export const Icons = [
+    'shopping_cart',
+    'favorite',
+    'supervisor_account',
+    'payment',
+    'flight_takeoff',
+    'people',
+    'construction',
+    'self_improvement',
+    'deck',
+    'email',
+    'call',
+    'directions_car',
+    'lunch_dining',
+    'family_restroom'];

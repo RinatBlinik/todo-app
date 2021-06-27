@@ -1,0 +1,21 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--appBgLightColor)
+}
+
+a {
+    display: flex;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.seperator {
+    flex: 1;
+}
+a.active{
+    background-color:var(--appBgDarkColor);
+    color: white;
+}

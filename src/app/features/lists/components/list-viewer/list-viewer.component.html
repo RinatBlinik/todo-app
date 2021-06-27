@@ -1,0 +1,48 @@
+<div *ngIf="currentList$ | async as list" [formGroup]="formGroup">
+    <div class="flexRow">
+        <app-navigation-presenter [navParts]="navParts"> </app-navigation-presenter>
+        <app-navigation-presenter [navParts]="[list.caption]" [class]="list.color"> </app-navigation-presenter>
+    </div>
+    <div class="flexRow">
+        <div class="material-icons {{list.color}} largFont">{{list.icon}}</div>
+        <div class="flexColumn">
+            <ng-container *ngIf="!showdeleteAlert">
+                <p>{{list.description}}</p>
+                <div class="flexRow btns">
+                    <button (click)="goToCreateList()">New List...</button>
+                    <button (click)="goToListEdit(list.id)">Edit...</button>
+                    <button class="buttonRed" (click)="alertDelete()">Delete</button>
+                </div>
+                <div *ngIf="isError" class="err">
+                    {{err}}
+                </div>
+            </ng-container>
+            <ng-container *ngIf="showdeleteAlert">
+                    <p>Are you sure you want to delete?</p>
+                    <div class="flexRow btns">
+                        <button (click)="cancelDelete()">cancel</button>
+                        <button class="buttonRed" (click)="deleteList(list)">Delete</button>
+                    </div>
+               
+            </ng-container>
+        </div>
+    </div>
+    <div *ngFor="let item of listItems$ | async">
+        <app-item-presenter [caption]="item.caption" [isCompleted]="item.isCompleted"
+            (click)="markItemAsCompleted(item)">
+        </app-item-presenter>
+    </div>
+    <div class="flexRow" >
+        <div class="material-icons checkBox">
+            crop_square
+        </div>
+        <div class="flexColumn">
+            <input type="text" formControlName="caption">
+           
+        </div>
+        <button [disabled]="formGroup.invalid" class="material-icons  plusBtn" (click)="addItem(list.id)">add</button>
+    </div>
+    <app-errors-presenter *ngIf="get('caption')?.touched" [errors]="get('caption')?.errors"></app-errors-presenter>
+</div>
+
+<app-general-error *ngIf="!(currentList$ | async) && doneLoading"></app-general-error>

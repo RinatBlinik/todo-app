@@ -1,0 +1,13 @@
+<app-navigation-presenter [navParts]="navParts"> </app-navigation-presenter>
+<ng-container *ngIf="listItems$ | async as listItems">
+    <div class="bigMessage" *ngIf="!listItems.length">
+        <span class="material-icons">thumb_up</span>
+        <h3>You do not have any uncompleted todo items</h3>
+    </div>
+</ng-container>
+
+<div *ngFor="let item of listItems$ | async">
+    <app-item-presenter [caption]="item.caption" [isCompleted]="item.isCompleted" (click)="markItemAsCompleted(item)">
+    </app-item-presenter>
+</div>
+<app-general-error *ngIf="!(listItems$ | async) && doneLoading"></app-general-error>

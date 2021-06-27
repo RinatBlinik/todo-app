@@ -1,0 +1,52 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+.largFont {
+    font-size: 96px;
+}
+.err {
+    border: 1px solid red;
+    color: red;
+    padding: 5px;
+    margin: 10px;
+}
+
+p {
+    flex-grow: 1;
+}
+.btns {
+    padding-bottom: 5px;
+}
+.plusBtn {
+    width: auto;
+    height: auto;
+    font-size: 12px;
+}
+.plusBtn:disabled{
+ background-color: var(--appBgLightColor);
+}
+input {
+    height: 25px;
+    min-width: 410px;
+    margin: auto 5px ;
+}
+.checkBox {
+    margin: auto 5px ;
+    color: var(--appBgMediumColor)
+}
+input {
+    outline: 0px transparent;
+}
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
