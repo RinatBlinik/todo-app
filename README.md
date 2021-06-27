@@ -1,3 +1,18 @@
+Client
+Beside the logic required by the project I added the following 
+Used:
+•	Lazy loading (for Items and for Lists)
+•	StyleService to manage the style for icons and colors
+•	CSS variables defining the app general colors for all components – make it easier to replace application colors at one place only (styles.css)
+•	ConfigService- getting values from config file (like AppName, DeveloperName and BaseUrl for the data service) this service is configured when the application is initialized using APP_INITIALIZER – this makes it easier to change important values without the need to build the application again.
+•	Error handling – for pages (Page-Not-Found, Page-General-Error, Form input controls validation)
+Testing Notes:
+•	In assets/data/config.json the baseUrl needs to be replaced with the correct one
+
+
+
+
+
 # TodoApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
