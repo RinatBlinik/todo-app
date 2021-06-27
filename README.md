@@ -2,6 +2,7 @@
 Beside the logic required by the project I added the following 
 # 
 Used:
+
 •	Lazy loading (for Items and for Lists)
 •	StyleService to manage the style for icons and colors
 •	CSS variables defining the app general colors for all components – make it easier to replace application colors at one place only (styles.css)
