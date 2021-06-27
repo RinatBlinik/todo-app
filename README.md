@@ -1,5 +1,6 @@
 # Client
 Beside the logic required by the project I added the following 
+# 
 Used:
 •	Lazy loading (for Items and for Lists)
 •	StyleService to manage the style for icons and colors
